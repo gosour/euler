@@ -1,0 +1,5 @@
+http://projecteuler.net/ 
+I will be trying to maintain an updated compilation of the solutions.
+The solutions will be mostly be in C. Few may be in python and lisp.
+The main aim is to find elegant solutions that will be be fast (< 1 sec in C and < 1 min in python). So before plagiarizing I will suggest you to have one more go at the problem.
+
