@@ -1,0 +1,56 @@
+/*Sourav Goswami
+18 Feb 2012
+euler3.c
+What is the largest prime factor of the number 600851475143 ?
+*/
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int prime(int);
+int main(int argc, char *argv[])
+{
+	int x;
+	int i,max;
+	x=atoi(argv[1]);
+	
+	for(i=x;i>1;i--)
+	{
+		if(prime(i) && (x%i==0))
+			max=i;
+	}
+	printf("The largest prime factor is %d ",max);
+	return 0;
+}
+		
+int prime(int num)
+{
+	int i,j,*array;
+	
+	array=malloc(num*sizeof(int)-1);
+	
+	array[0]=array[1]=-1;
+	
+	for(i=2;i<=num;i++)
+		array[i]=i;
+	
+	for(i=2;i<=num;i++)
+	{
+		if(array[i]!=-1)
+			j=i;
+		else
+			continue;
+		
+				
+		while(j+i<=num)
+		{
+			j+=i;
+			array[j]=-1;
+		}
+	}
+	printf("\n %d",array[num]);
+	if(array[num]!=-1)
+		return 1;
+	else
+		return 0;
+}
